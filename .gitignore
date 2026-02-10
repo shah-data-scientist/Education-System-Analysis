@@ -1,0 +1,6 @@
+# Large data files
+data/EdStatsData.csv
+data/EdStatsFootNote.csv
+
+# Jupyter checkpoint files
+.ipynb_checkpoints/
