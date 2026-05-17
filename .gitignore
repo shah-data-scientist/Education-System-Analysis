@@ -2,5 +2,30 @@
 data/EdStatsData.csv
 data/EdStatsFootNote.csv
 
+# Generated intermediate parquet files
+data/processed/
+
 # Jupyter checkpoint files
 .ipynb_checkpoints/
+
+# Python
+__pycache__/
+.venv/
+*.log
+
+# Environment / secrets
+.env
+
+# Coverage
+.coverage
+
+# Archived directories
+_archived_scripts/
+scripts/_working/
+tests/_archived/
+*_archived/
+
+# Root-level test/debug files
+/test_*.py
+/check_*.py
+/debug_*.py
