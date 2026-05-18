@@ -1,6 +1,6 @@
-# Education System Analysis
+# Education Market Opportunity Model
 
-Exploratory data analysis of the **World Bank EdStats** dataset to identify countries with the highest education investment potential for an EdTech startup's international expansion strategy.
+Composite scoring model built on the **World Bank EdStats** dataset to identify and rank countries by education investment potential — supporting an EdTech startup's international expansion strategy.
 
 > **Open Classrooms — Projet 2** | Author: Shahul SHAIK
 
@@ -50,7 +50,7 @@ Exploratory data analysis of the **World Bank EdStats** dataset to identify coun
 │   ├── 01_data_loading.ipynb        # Load raw data, filter countries & years, save intermediates
 │   ├── 02_processing.ipynb          # Merge, fill rate, trend visualisation, correlation analysis
 │   ├── 03_scoring_results.ipynb     # Imputation, reshape, scoring, top 20 visualisations
-│   └── Education_System_Analysis.ipynb  # Monolithic reference notebook (kept for comparison)
+│   └── Education_Market_Opportunity_Model.ipynb  # Monolithic reference notebook (kept for comparison)
 │
 ├── data/
 │   ├── EdStatsSeries.csv            # Indicator metadata — 3,665 indicators [gitignored if large]

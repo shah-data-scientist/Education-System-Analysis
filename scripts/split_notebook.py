@@ -1,12 +1,12 @@
-"""Split Education_System_Analysis.ipynb into three focused notebooks."""
+﻿"""Split Education_Market_Opportunity_Model.ipynb into three focused notebooks."""
 import json
 import uuid
 import copy
 import os
 
-NB_PATH = r"c:\Users\shahu\Documents\OneDrive\OPEN CLASSROOMS\PROJET 2\Education System Analysis\notebooks\Education_System_Analysis.ipynb"
-OUT_DIR = r"c:\Users\shahu\Documents\OneDrive\OPEN CLASSROOMS\PROJET 2\Education System Analysis\notebooks"
-DATA_DIR = r"c:\Users\shahu\Documents\OneDrive\OPEN CLASSROOMS\PROJET 2\Education System Analysis\data"
+NB_PATH = r"c:\Users\shahu\Documents\OneDrive\OPEN CLASSROOMS\PROJET 2\Education Market Opportunity Model\notebooks\Education_Market_Opportunity_Model.ipynb"
+OUT_DIR = r"c:\Users\shahu\Documents\OneDrive\OPEN CLASSROOMS\PROJET 2\Education Market Opportunity Model\notebooks"
+DATA_DIR = r"c:\Users\shahu\Documents\OneDrive\OPEN CLASSROOMS\PROJET 2\Education Market Opportunity Model\data"
 
 with open(NB_PATH) as f:
     nb = json.load(f)
@@ -14,7 +14,7 @@ with open(NB_PATH) as f:
 src_cells = nb["cells"]
 
 
-# ── helpers ──────────────────────────────────────────────────────────────────
+# â”€â”€ helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def uid():
     return str(uuid.uuid4())[:8]
@@ -52,7 +52,7 @@ def notebook(cells):
     }
 
 
-# ── shared setup code ─────────────────────────────────────────────────────────
+# â”€â”€ shared setup code â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 SETUP = """\
 import pandas as pd
@@ -81,12 +81,12 @@ os.chdir(drive_data_path)\
 """
 
 
-# ── Notebook 1: Data Loading & Preprocessing ─────────────────────────────────
-# Source cells 0-15  (imports → year range filtering)
+# â”€â”€ Notebook 1: Data Loading & Preprocessing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Source cells 0-15  (imports â†’ year range filtering)
 # Cell index map (41-cell notebook):
-#  0  code  imports+setup   → replaced by SETUP
-#  1  md    Project Context → kept
-#  2  md    TOC             → skipped (per-notebook intro replaces it)
+#  0  code  imports+setup   â†’ replaced by SETUP
+#  1  md    Project Context â†’ kept
+#  2  md    TOC             â†’ skipped (per-notebook intro replaces it)
 #  3  md    Data Overview
 #  4  md    Indicator Data section
 #  5  code  load EdStatsSeries
@@ -103,9 +103,9 @@ os.chdir(drive_data_path)\
 
 nb1 = []
 nb1.append(md_cell(
-    "# Notebook 1 — Data Loading & Preprocessing\n\n"
+    "# Notebook 1 â€” Data Loading & Preprocessing\n\n"
     "Loads the raw World Bank EdStats data, filters to valid ISO countries "
-    "and the 2010–2024 window, and saves cleaned datasets for the next notebook.\n\n"
+    "and the 2010â€“2024 window, and saves cleaned datasets for the next notebook.\n\n"
     "**Outputs saved to `data/processed/`:**\n"
     "- `indicator_data.parquet`\n"
     "- `indicator_values.parquet`"
@@ -130,8 +130,8 @@ with open(os.path.join(OUT_DIR, "01_data_loading.ipynb"), "w") as f:
 print("Written 01_data_loading.ipynb")
 
 
-# ── Notebook 2: Processing & Analysis ────────────────────────────────────────
-# Source cells 16-27  (merge → correlation flatten+enrich)
+# â”€â”€ Notebook 2: Processing & Analysis â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Source cells 16-27  (merge â†’ correlation flatten+enrich)
 # 16  md   Analysis of Consolidated Data
 # 17  md   Processing 3: Merge
 # 18  code merge
@@ -147,7 +147,7 @@ print("Written 01_data_loading.ipynb")
 
 nb2 = []
 nb2.append(md_cell(
-    "# Notebook 2 — Processing & Analysis\n\n"
+    "# Notebook 2 â€” Processing & Analysis\n\n"
     "Merges the cleaned datasets, evaluates indicator fill rates, "
     "visualises trends, and performs correlation analysis to remove redundant indicators.\n\n"
     "**Input:** `data/processed/indicator_data.parquet`, `data/processed/indicator_values.parquet`  \n"
@@ -177,8 +177,8 @@ with open(os.path.join(OUT_DIR, "02_processing.ipynb"), "w") as f:
 print("Written 02_processing.ipynb")
 
 
-# ── Notebook 3: Scoring & Results ────────────────────────────────────────────
-# Source cells 28-40  (remove redundants → conclusion)
+# â”€â”€ Notebook 3: Scoring & Results â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Source cells 28-40  (remove redundants â†’ conclusion)
 # 28  code remove redundant indicators
 # 29  md   Processing 7: Missing Value Treatment
 # 30  code imputation (before/after msno + head)
@@ -186,7 +186,7 @@ print("Written 02_processing.ipynb")
 # 32  code melt + pivot
 # 33  code missing values check reshaped
 # 34  md   Processing 9: Education Potential Score
-# 35  code score computation + dropna  ← starts with sklearn import → strip it
+# 35  code score computation + dropna  â† starts with sklearn import â†’ strip it
 # 36  md   Processing 10: Top 20 Countries
 # 37  code bar chart
 # 38  code line chart
@@ -195,9 +195,9 @@ print("Written 02_processing.ipynb")
 
 nb3 = []
 nb3.append(md_cell(
-    "# Notebook 3 — Scoring & Results\n\n"
+    "# Notebook 3 â€” Scoring & Results\n\n"
     "Imputes missing values, reshapes data, computes the composite "
-    "Education Potential Score (0–100) for each country, and identifies "
+    "Education Potential Score (0â€“100) for each country, and identifies "
     "the top 20 markets for Academy's expansion.\n\n"
     "**Input:** `data/processed/consolidated_table.parquet`"
 ))
@@ -227,7 +227,7 @@ with open(os.path.join(OUT_DIR, "03_scoring_results.ipynb"), "w") as f:
 print("Written 03_scoring_results.ipynb")
 
 
-# ── Create processed/ directory ───────────────────────────────────────────────
+# â”€â”€ Create processed/ directory â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 os.makedirs(os.path.join(DATA_DIR, "processed"), exist_ok=True)
 print("Created data/processed/")
-print("\nDone. Run the notebooks in order: 01 → 02 → 03")
+print("\nDone. Run the notebooks in order: 01 â†’ 02 â†’ 03")

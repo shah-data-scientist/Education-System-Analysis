@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "education-system-analysis"
+name = "education-market-opportunity-model"
 version = "0.1.0"
-description = "World Bank EdStats exploratory data analysis (Open Classrooms Projet 2)"
+description = "World Bank EdStats education market opportunity model (Open Classrooms Projet 2)"
 authors = ["Shahu"]
 package-mode = false
 
